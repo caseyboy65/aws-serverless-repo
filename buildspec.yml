@@ -12,10 +12,6 @@ containers:
                     - npm install
                     - echo Installing Mocha....
                     - npm install -g mocha
-            pre_build:
-                commands:
-                    - Installing source NPM dependencies....
-                    - npm install unit.js
             build:
                 commands:
                     - echo Build stated on 'date'
