@@ -11,7 +11,7 @@ containers:
                     - echo install npm
                     - npm install
                     - echo Installing Mocha....
-                    - npm install -g Mocha
+                    - npm install -g mocha
             pre_build:
                 commands:
                     - Installing source NPM dependencies....
