@@ -10,5 +10,5 @@ it('subtract 1 from sam to be 14', () => {
 }); 
 
 it('add 1 to sam to be 15', () => {
-  assert.equal(helper.addSamCount(), 1);
+  assert.equal(helper.addSamCount(), 15);
 }); 
