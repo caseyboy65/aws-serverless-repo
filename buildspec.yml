@@ -8,6 +8,8 @@ containers:
         phases:
             install:
                 commands:
+                    - echo install npm
+                    - npm install
                     - echo Installing Mocha....
                     - npm install -g Mocha
             pre_build:
@@ -19,13 +21,11 @@ containers:
                     - echo Build stated on 'date'
                     - echo compiling the node.js code
                     - mocha test.js
-            during_build:
-                commands:
-                    - npm install
-                    - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
             post_build:
                 commands:
-                    - ech Build completed on 'date'                    
+                    - echo Build completed on 'date'
+                    - echo Spinning up environment
+                    - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
         artifacts:
             files:
                 - post-saml.yaml
